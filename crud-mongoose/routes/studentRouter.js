@@ -22,15 +22,30 @@ app.get('/student', async (req, res) => {
     }
 });
 
-app.patch('student/:id', async (req, res)=>{
+app.patch('student/:id', async (req, res) => {
     try {
         const id = req.params.id;
-        studentModel.findByIdAndUpdate({_id:id}, req.body, {new: true});
-res.sed
+        console.log(id);
+        const student = studentModel.findByIdAndUpdate({ _id: id }, req.body, { new: true }); //new: true é para retornar o dado alterado
+        if (!student)
+            res.status(404).send('Documento não encontrado na coleção');
+        else
+            res.send(student);
     } catch (error) {
-        
+        res.status(500).send(error);
     }
 })
-
+app.delete('student/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+        const student = studentModel.findByIdAndDelete({ _id: id })
+        if (!student)
+            res.status(404).send('Documento não encontrado na coleção');
+        else
+            res.send(student);
+    } catch (error) {
+        res.status(500).send(error);
+    }
+});
 
 export { app as studentRouter };
