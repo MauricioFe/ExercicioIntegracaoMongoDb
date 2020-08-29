@@ -1,0 +1,23 @@
+{
+  "name": "exerciciointegracaomongodb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MauricioFe/ExercicioIntegracaoMongoDb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MauricioFe/ExercicioIntegracaoMongoDb/issues"
+  },
+  "homepage": "https://github.com/MauricioFe/ExercicioIntegracaoMongoDb#readme",
+  "dependencies": {
+    "mongodb": "^3.6.0"
+  }
+}
